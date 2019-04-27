@@ -1,0 +1,597 @@
+
+/* Implementando nomalize.css
+
+Con el archivo nomalize.css logramos uniformidad completa con respecto a las etiquetas html5 a la hora de agregar estilos con css3
+
+https://necolas.github.io/normalize.css/ 
+
+*/
+
+
+/*---------------------------------------------------
+                    ESTILOS GENERALES
+---------------------------------------------------*/
+
+/* Todas las etiquetas de un documento html */
+/*2*/
+
+*{
+     /*Incluir el border y el padding dentro del tamaño general del documento box-sizing: border-box;*/
+    box-sizing: border-box;
+}
+
+/* Etiqueta body */
+
+/* 16px       1em
+     ?        1.4em  = 22.4px
+*/
+
+/*1*/
+body{
+    font-size: 16px;/*Texto General*/
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4em; /*Interlinado 22.4px*/
+}
+
+/*---------------------------------------------------
+                    ANCHURA DEL SITIO
+---------------------------------------------------*/
+/*3*/
+.contenedor{
+    width: 980px;/*Anchura del contenedor*/
+    margin: 0 auto; /*Centrar contenedor*/
+    /* Verificar el efecto que tiene .contenedor */
+    /* background: rgba(15, 82, 73, 0.212); */
+    /* border:  1px solid #1252b3; */
+}
+
+/*---------------------------------------------------
+                    ENCABEZADO
+---------------------------------------------------*/
+/*4* .encabezado ocupa todo el ancho*/
+.encabezado{
+    background: #2c2c2c;/*fondo del encabezado*/
+    
+    /*Padre (.encabezado) se obliga a contener a sus hijos (logo y nav) que son flotantes*/
+
+    overflow: hidden; 
+}
+/*5*/
+.logo{
+    /*Flotar a la izquierda el logo*/
+    float: left;
+    /*Mover logotipo sin afectar la altura del .encabezado*/
+    position: relative; 
+    top: 7px;
+}
+/*6 Unica etiqueta nav dentro del header*/
+.encabezado nav{
+    /*Flotar a la derecha el menú de navegación*/
+    float: right;
+}
+/*7*/
+.encabezado nav ul{
+    /*Quitar las viñetas del menú de navegación*/
+    margin: 0;/*Sin margen*/
+    padding: 0;/*Sin espaciado interno*/
+    list-style: none;/*Sin viñetas*/
+}
+/*8*/
+.encabezado nav ul li{
+    /*Poner el nav en una sólo línea*/
+    display: inline-block;
+    /* background: blue; */
+    /*Quitar espaciado que tienen los elementos inline*/
+    margin-right:-4px;
+}
+/*9 Color y efectos de los enlaces de nav*/
+.encabezado nav ul li a{
+    /*Mostrar los enlaces en bloque, para ocupar todo el ancho*/
+    display: block;
+    color: #fff;
+    /* Nota: .encabezado crece (altura) en función de sus elementos, es decir, no se le asigna un tamaño específico. 
+                              padding: 28px; */
+    padding: 28px;
+     /*Asignando border para las lineas que separan a los elementos de nav*/
+    border-left: 1px solid #696969;
+    /* Quitar el subrayado de los elemento de nav */
+    text-decoration:  none;
+}
+/*10 Efecto: cambio de color al elemento de nav al pasar el mouse por encima*/
+.encabezado nav ul li a:hover{
+   background: #575757;
+}
+
+/*---------------------------------------------------
+                    PRESENTACIÓN
+---------------------------------------------------*/
+/*11*/
+.presentacion{
+    
+    /*Padre (.presentacion) se obliga a contener a sus hijos (introduccion-presentacion e img) que son flotantes*/
+    /* overflow: hidden;  */
+    /*Prueba para reconocer a sus hijos*/
+
+    /*----------Asignando un gradiente----------*/
+    background:radial-gradient(280px at 25% 10%,#A3D4FF,#0460ad);
+    /*
+    Horizontal = 25%
+    Verticalmente, parte superior 10%
+    claro
+    oscuro
+    */
+
+    /*Agregar la compatibilidad con Internet Explorer 9 y anteriores*/
+
+    -pie-background: linear-gradie (#A3D4FF,#0460ad);
+
+    /* Colocamos linea que divide .presentacion */
+    border-bottom: 3px solid #044e8b;
+}
+/*12*/
+.introduccion-presentacion{
+    /*Alineción de elementos a la izquierda*/
+    /* float: left;    */
+    display: inline-block;
+}
+/*13*/
+.introduccion-presentacion h1{
+    color: #fff;
+    font-size: 2.625em;/*42px*/
+    
+    /*Aplicando sombra a h1*/
+    /*derecha,abajo,difuminado,color*/
+    text-shadow: 1px 1px 0px #090909;
+    text-align:  center; /*Centrar texto*/ 
+    /*margen en la parte de arriba (bajar elementos)*/
+    margin-top: 1.666666666666667em; /*70px*/
+    margin-bottom:0.9523809523809524em;/*40px*/
+    margin-left:0.4761904761904762em; /*20px*/
+    line-height: 0.7em;
+}
+
+/* 
+1em = 16px
+ ?     42px   [42/16=2.625em] 
+ 
+*/
+
+ /* 
+ 1em  = 42px
+  ?     70px [70/42=1.666666666666667em] 
+*/
+
+/* 
+ 1em  = 42px
+  ?     40px [40/42=0.9523809523809524em] 
+  
+*/
+
+ /* 
+ 1em  = 42px
+  ?     20px [20/42=0.4761904761904762em] 
+  
+*/
+
+
+/*14*/
+.introduccion-presentacion h1 span{
+    color: #fff;
+    font-size: 0.380952380952381em;/*16px*/
+}
+/* 1em = 42px
+ ?       16px   [16/42=0.380952380952381em] */
+
+ 
+ /*15 Simulación botón*/
+
+a.aprender-mas{
+    font-size: 2.1875em;/*35px*/
+    border: 1px solid #0d5c25;/*borde botón*/
+    /*arriba-abajo/laterales*/
+    padding: 30px 50px; 
+    background: blue;/*fondo*/
+    display:  block; /*Ocupa todo el espacio*/
+    margin: 10px 40px 55px; /*inferior-superio/laterales/inferior*/
+    color: #fff;/*Color de tecto*/
+    text-align:center;/*Alinear texto*/
+    text-decoration: none;/*Quitar subrayado*/
+    /*Aplicando sombra al texto*/
+    text-shadow: 1px 1px 0 #000;
+    border-radius: 10px ; /*Esquina Redondeada*/
+
+    /*Aplicando degradado*/
+    /*
+        Se dirige de abajo hacia arriba
+            primer color verde #319b41 (obscuro)
+            segundo color #21c653 (claro)
+    */
+    background: linear-gradient(to top,#319b41,#21c653);
+
+    /*Agregar la compatibilidad con Internet Explorer 9 y anteriores*/
+
+    -pie-background: linear-gradie (to top,#319b41,#21c653);
+    
+    /*Sombra de texto para generar la barrita debajo del botón*/
+    box-shadow: 0 8px 0 0 #20782f,
+                0 0 25px 5px #fff;
+
+    /*
+    box-shadow:
+        horizontal      = 0 (no se mueva)
+        vertical        = 8px
+        difuminado      = 0
+        potencia_sombra = 0
+        color           = blue
+        , segunda sombra
+
+    */
+}
+
+/* 1em = 16px
+ ?       35px   [35/16=2.1875em] */
+
+/*16 Cambio de estado al pasar el mouse por encima del botón*/
+
+a.aprender-mas:hover{
+    background: linear-gradient(to top,#319b41,#42FF7B);
+
+     /*Agregar la compatibilidad con Internet Explorer 9 y anteriores*/
+
+    -pie-background: linear-gradie (to top,#319b41,#42FF7B);
+}
+/*13-17*/
+
+/*Imagen que esta dentro de .presentacion*/
+.presentacion img{
+    /*Alineción de elementos a la derecha*/
+    float: right;
+    /*Mover la imagen (bajarla) de arriba a abajo*/
+    /*Esta imagen que está flotando a la derecha no será considerada por la etiqueta padre, por ello, se mostrará de forma completa*/
+    position: relative;
+    top: 15px;
+}
+
+/*---------------------------------------------------
+                    ACCESO RÁPIDO
+---------------------------------------------------*/
+
+/*18*/
+.acceso-rapido{
+    background: #21bc4e;/*Color de fondo .acceso-rapido*/
+    /* Evitar el colapso de margen de h1, quitamos el margen que tiene por defecto h1 */
+    overflow: hidden;
+    /*Asignar borde color oscuro de final de .acceso-rapido*/
+    border-bottom: 3px solid #1c943f;
+
+}
+/*19*/
+.acceso-rapido h2{
+   color: #fff;
+   font-size: 1.875em; /*Tamaño fuente 30px*/
+   text-shadow: 1px 1px 0 #000; /*Sombra*/
+   text-align:  center; /*texto centrado*/
+   border-bottom: 3px solid #fff;/*linea debajo del texto*/
+   padding-bottom: 16px;/*separación linea y texto*/
+    
+}
+/* 
+1em = 16px
+ ?  = 30px   =[30/16=1.875em] */
+
+ /*20*/
+ .acceso-rapido figure{
+     display: inline-block; /*Colocar elementos de forma horizontal*/
+     text-align:  center; /*Alinear texto*/
+     width: 25%;
+     margin: 0 -4px 0 0
+     /*superior, derecha,inferior,izquierda*/
+ }
+
+ /*21*/
+.acceso-rapido figure:hover{
+     /*Cambiar de color al pasar el mouse por el figure*/
+    background: linear-gradient(to top,#319b41,#42FF7B);
+ }
+
+ /*22*/
+ .acceso-rapido h3{
+     /* Sobrescribir el valor por defecto le asigna el navegador a la etiqueta h3 */
+     font-size: 2.1875em; /*35px letra imagenes*/
+     margin-top: 15px;/*Quitar el margen que se asigna por defecto*/
+     margin-bottom: 20px;
+ }
+
+ /* 
+ 1em = 16px
+ ?  = 35px   =[35/16=2.1875em] */
+
+  /*23*/
+ .acceso-rapido h3 a{
+     color: #fff;
+     text-shadow: 1px 1px 0 #000; /*Sombra*/
+     font-weight:  normal; /*Quitarle lo negrita*/
+ }
+
+ /*24*/
+ .acceso-rapido h3 a:hover{
+     text-decoration: none ;/*Quitar subrayado al pasar el mouse por encima del enlace contenido dentro de h3*/
+ }
+ 
+/*---------------------------------------------------
+                    CONTENIDO PRINCIPAL: ARTÍCULOS
+---------------------------------------------------*/
+
+/*25*/
+.bloque-contenido{
+    overflow: hidden;/*Contener a sus hijos flotantes*/
+    /*Generar espaciado con respecto a sus dos elementos*/
+    margin-top: 25px;
+}
+/*26*/
+.bloque-contenido .contenedor{
+    display: table;/*Se comportará como una tabla*/
+}
+/*27*/
+.articulos{
+    /* float:  left;flotar a la izquierda */
+    /* background: red;Color de fondo */
+    width: 65%;/*Mostrar de manera proporcional anchura*/
+
+    /* Se puede observar algo, tiene la misma anchura, pero no la misma altura */
+    display: table-cell;/*Comportamiento de celda (altura igual al bloque que tiene al costado)*/
+    padding-right: 30px;/*Espaciado con respecto a la otra celda*/
+}
+/* 
+980 - 100%
+627    ?     =[(627*100)/980=63.97959183673469%] = 65%
+*/
+
+/*28*/
+.articulos h2{
+    color: #344444;
+    font-size: 1.625em;/*26px*/
+    /*Color de línea en borde*/
+    border-bottom: 3px solid #0460ad;
+    padding-bottom: 25px;
+}
+/* 16px 1em
+26    ?   = [26/16=1.625em] */
+
+/*29*/
+.articulos article{
+    margin-bottom: 10px;/*Margen article*/
+}
+
+/*30*/
+.articulos img{
+    float: left; /*Flotar a la izquierda*/
+    margin-right: 10px;/*Margen derecho imagen*/
+    /*Bajar la imagen a la misma altura que el párrafo*/
+    position: relative;
+    top: 4px;
+}
+/*31*/
+.articulos article h1{   
+    font-size: 1.25em;/* 20 px Titulo noticia*/
+    margin: 0 0 8px 0;/*Margen título*/
+}
+
+/* 16px 1em
+20    ?   = [20/16=1.25em] */
+
+/*32*/
+.articulos article h1 a{
+    color: #444444;/*Color enlace*/
+    text-decoration:  none;/*Quitar subrayado*/
+}
+/*33*/
+.articulos article h1 a:hover{
+    text-decoration:underline;/*Agregar línea al enlace*/
+}
+
+/*34*/
+.articulos article p{
+    margin: 0;
+    font-size: 0.875em; /*14px*/ 
+    text-align:  justify;/*párrafo justificado*/
+}
+
+/* 16px 1em
+14    ?   = [14/16=0.875em] */
+
+
+
+/*---------------------------------------------------
+            COMPLEMENTARIO: aside.complementario
+---------------------------------------------------*/
+
+/*27- 35*/
+.complementario{
+    /* float: right;flotar a la derecha */
+    /* background: blue;Color de fondo */
+    width: 35%;/*Mostrar de manera proporcional anchura*/
+    display: table-cell;/*Comportamiento de celda (altura igual al bloque que tiene al costado)*/
+    background: #0460ad;
+    /*superior, derecha, inferior */
+    padding: 0 20px 20px;/*Separación interna*/
+    border-radius: 20px; /*Esquinas redondeadas de .complementario (próximos eventos)*/
+}
+
+/* 
+980 - 100%
+627    ?     =[(627*100)/980=63.97959183673469%] = 65%
+
+100% .contenedor -65% .articulo = 35% .complementario
+
+*/
+
+/*36*/
+.complementario h2{
+    color: #fff;/*Color de letra*/
+    font-size: 1.625em;/*tamaño de título*/
+    font-weight: normal;/*Quitar negrita*/
+    text-align:  center;
+}
+/* 16px 1em
+26    ?   = [26/16=1.625em] 
+*/
+
+/*37*/
+.complementario ul{
+    margin: 0; /*Quitar valores por defecto*/
+    padding: 0;
+    list-style: none;/*Quitar el estilo de las viñetas*/
+}
+
+/*38*/
+.complementario ul li{
+    /*Colocar imagen de evento*/
+
+     /* No repetir
+        Alineación a la izquierda de forma horizontal
+       Alineación al centro en forma vertical
+    */
+     background: url("../img/ico-evento.png") no-repeat left center;
+     padding-left: 25px;/*Separación de la imagen(calendario) con respecto al texto*/
+
+     /* Separación entre elementos */
+     margin-bottom: 7px;
+}
+/*39*/
+.complementario ul li a{
+    color: #fff;
+    /*Quitar subrayado */
+    text-decoration: none;
+}
+/*40*/
+.complementario ul li a:hover{
+    /*Colocar subrayado al pasar el mouse por encima*/
+    text-decoration: underline; 
+}
+
+/*---------------------------------------------------
+            SUSCRIPCIÓN 
+---------------------------------------------------*/
+
+/*41*/
+.suscripcion{
+    overflow: hidden; /*Contener al h2 y form que están flotando*/
+    /* border: 1px solid red; */
+    background: #eeeeee;/*Color de fondo*/
+    padding: 15px 0; /*Espaciado interno (arriba, abajo/laterales)*/
+    margin-top: 20px;/*Margen externo respecto al contenedor anterior*/
+}
+/*42*/
+.suscripcion h2{
+    float: left; /*Flotar a la izquierda*/
+    font-size: 1.625em; /*26 px*/
+    color: #444444;
+    font-weight:  normal; /*Quitar estilo negrita por defecto del navegador*/ 
+}
+/* 
+16px 1em
+26px ?      [26/16=1.625em] 
+*/
+
+/*43*/
+.suscripcion form{
+    float: right; /*Flotar a la derecha*/
+    position: relative; /*Bajar el formulario 20px de su posición original*/
+    top: 20px;
+}
+
+/*44*/
+.suscripcion form input{
+    border:  1px solid #cccccc;
+    padding: 10px;
+}
+
+/*45 Estilizar botón, mediante su atributo*/
+.suscripcion form input[type="submit"]{
+    background: #0460ad;/*Color fondo botón form*/
+    color: #fff;/*Color letra botón form*/
+    border:  1px solid #22314d;/*Borde botón form*/
+    padding: 10px;
+    text-shadow: 1px 1px 0 #000;/*Sombra botón form*/
+    box-shadow: 0 -1 0px 0 #93badc inset;/*Pequeña sombra, parte interna del botón*/
+}
+/*46 Pasar el mouse por encima del botón*/
+.suscripcion form input[type="submit"]:hover{
+    background: #21bc4e;/*Color fondo botón form*/   
+}
+
+/*---------------------------------------------------
+            PIE DE PÁGINA
+---------------------------------------------------*/
+/*47*/
+.pie-pagina{
+    background: #444444; /*Fondo de .pie-pagina*/
+    padding: 20px 0;
+}
+/*48*/
+.pie-pagina .contenedor{
+    display: table; /*Comportamiento de tabla*/
+}
+/*49*/
+.pie-pagina small{
+    display: table-cell; /*Comportamiento de celda*/
+    /* background: red; */
+    color: #fff; /*Color de letra*/
+}
+/*50*/
+.pie-pagina nav{
+    display: table-cell;/*Comportamiento de celda*/
+    /* background: blue; */
+    text-align: right; /*alinear texto a la derecha*/
+}
+/*51*/
+.pie-pagina nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none; /*Quitar viñetas*/
+}
+/*52*/
+.pie-pagina nav ul li {
+    display: inline-block; /*elementos el línea*/
+    padding-left: 10px; /*Espaciado izquierdo*/
+    
+}
+/*53*/
+.pie-pagina nav ul li a {
+    color: #fff; /*Color de enlace*/
+    text-decoration:  none;  /*Quitar subrayado*/
+}
+/*54*/
+.pie-pagina nav ul li a:hover {
+    text-decoration:  underline; /*Poner subrayado*/
+}
+
+/*---------------------------------------------------
+            REDES SOCIALES
+---------------------------------------------------*/
+/*55*/
+.redes-sociales{
+    position: fixed; /*Posicionar de forma estática*/
+    top: 30%; /*(vertical)Centro, con respecto a la parte superior (body)*/
+    right: 0; /*Se va hacia la derecha (horizontal)*/
+}
+
+/*56 ALINEAR LOS ICONOS DE FORMA VERTICAL, NO HORIZONTAL*/
+.redes-sociales a{
+    display: block; /*Quitar espaciado interno que por defecto tienen los elementos en línea*/
+    margin-bottom: 4px; /*Separación de iconos*/
+    opacity: 0.8; /*Opacida de iconos*/
+}
+
+/*57*/
+.redes-sociales a:hover{
+    opacity: 1; /*Volver a la opacidad original, al pasar el mouse por encima*/
+}
+
+/*58 Decorar iconos*/
+.redes-sociales img{
+    border-radius: 50%; /*El icono se volverá una espefa*/
+    display:  block; /*Mostrarse en bloque*/
+
+}

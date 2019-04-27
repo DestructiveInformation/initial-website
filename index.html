@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es"> <!--Opciones de Idioma  (español)-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Proyecto Curso HTML5 y CSS3</title>
+    <!-- Vincular archivos css -->
+    <!-- Normalizar etiquetas html5 con normalize.css -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <!-- Sí la versión del navegador es anterior a Internet Explorer 9. Cargar el siguiente archivo -->
+    <script src="js/html5shiv.js"></script>
+    
+    
+    <!-- Sí la versión del navegador es anterior o igual a Internet Explorer 9. Cargar el siguiente archivo (estilos css 3 sean reconocidos) 
+    -->
+
+    <style type="text/css">
+        .encabezado,
+        .presentacion,
+        a.aprender-mas,
+        .complementario,
+        .social img{
+
+            behavior:url("css/compatibilidad-estilos/PIE.php");
+        }
+    
+    </style>
+
+    
+</head>
+<body>
+    <!-- Codificando el encabezado -->
+
+    <!-- Se usa id cuando se necesita referenciar un elemento usando javascript, o cuando hay un choque de estilos (cascada) y quieres que tu estilo sobresalga, entonces ahí se debe utilizar id -->
+
+    <!-- Observamos que deacuerdo a nuestro diseño el nav debe ir dentro del header -->
+
+        <header class="encabezado" role="banner">
+            <div class="contenedor">
+                <a href="#" class="logo">
+                    <img src="img/logo.png" alt="logotipo-sitio">
+                </a>
+                <nav role="navigation">
+                    <!-- ul>li*3>a[href="#"] -->
+                    <ul>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Contactanos</a></li>
+                    </ul>
+                </nav><!--Fin Menú de Navegación-->
+            </div> <!--Fin del div.contenedor-->
+        </header><!--Fin de header .encabezado-->
+
+        <!-- ---------------------------------------------------------------
+        --------------------------------------------------------------- -->
+
+        <!-- BLOQUE DE PRESENTACIÓN USANDO LA ETIQUETA div -->
+
+        <div class="presentacion">
+
+            <div class="contenedor">
+                <div class="introduccion-presentacion">
+                    <h1>EXPERTO HTML5 & CSS3<br>
+                        <span>Empieza a codificar hermosos sitios web en 8 horas</span>
+                    </h1>
+                    <a href="#" class="aprender-mas">Aprender más</a> <!--Botón-->
+                </div><!--Fin div.introduccion-presentacion-->
+                <img src="img/computadora.png" alt="cmputadora-principal"><!--Insertar Computadora-->
+            </div><!--Fin div.contenedor-->
+
+        </div><!--Fin div.presentacion-->
+
+        <!-- ---------------------------------------------------------------
+                --------------------------------------------------------------- -->
+
+        <!-- BLOQUE QUE HABLA ACERCA DE UN TEMA AISLADO Y QUE NECESITA UN TÍTULO -->
+
+       <section class="acceso-rapido">
+           <div class="contenedor"> <!--Permite que el contenido esté centrado-->
+                <h2>Acceso Rápido</h2>
+                    <!-- Se utiliza h3 porque al parecer el contenido es importante -->
+                    <figure>
+                        <a href="#"><img src="img/ico-nosotros.png" alt="Nosotros"></a>
+                        <figcaption>
+                            <h3><a href="#">Nosotros</a></h3>
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="#"><img src="img/ico-servicios.png" alt="Servicios"></a>
+                        <figcaption>
+                            <h3><a href="#">Servicios</a></h3>
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="#"><img src="img/ico-ubicanos.png" alt="Ubicanos"></a>
+                        <figcaption>
+                            <h3><a href="#">Ubicanos</a></h3>
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <a href="#"><img src="img/ico-contactanos.png" alt="Contactanos"></a>
+                        <figcaption>
+                            <h3><a href="#">Contáctanos</a></h3>
+                        </figcaption>
+                    </figure> 
+           </div>
+       </section>
+
+    <!-- ---------------------------------------------------------------
+                    --------------------------------------------------------------- -->
+    
+    <!-- CONTENIDO PRINCIPAL -->
+
+    <div class="bloque-contenido">
+        <div class="contenedor">
+            <main class="articulos" role="main">
+                <h2>ÚLTIMAS NOTICIAS</h2>
+                <article>
+                    <img src="img/img-articulo1.jpg" alt="articulo-1"><!--Imagen artículo-->
+                    <h1><a href="#">Un perrito Feeling!</a></h1><!--Titulo del artículo h1 porque es una nueva sección del doc-->
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia possimus ducimus alias nobis nostrum est sed! Enim eveniet laboriosam exercitationem neque culpa reprehenderit, perferendis assumenda ipsam facilis quas non ad?
+                    </p><!--Contenido del artículo-->
+                </article>
+                
+                <article>
+                    <img src="img/img-articulo2.jpg" alt="articulo-2">
+                    <!--Imagen artículo-->
+                    <h1> <a href="#">Un perrito loco!</a></h1>
+                    <!--Titulo del artículo h1 porque es una nueva sección del doc-->
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum consectetur delectus reprehenderit optio nisi nihil, tempore quia ratione, quod fuga numquam. Corrupti illo odio quaerat vitae error repellat voluptas doloremque.
+                    </p>
+                    <!--Contenido del artículo-->
+                </article>
+
+                <article>
+                    <img src="img/img-articulo3.jpg" alt="articulo-2">
+                    <!--Imagen artículo-->
+                    <h1><a href="#">Un perrito Hermoso!</a></h1>
+                    <!--Titulo del artículo h1 porque es una nueva sección del doc-->
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error doloremque in nobis totam nulla, officiis consequuntur eveniet mollitia provident pariatur odit? Rem harum dolor iusto laborum veniam earum nihil eum.
+                    </p><!--Contenido del artículo-->
+                </article>
+            </main><!--Fin main-->
+        
+            <!-- Agregamos contenido complementario usando aside -->
+                        
+            <aside class="complementario" rol="complementary">
+                <h2>PRÓXIMOS EVENTOS</h2>
+                <ul>
+                    <li><a href="#">Some of the cheapest prices around</a></li>
+                    <li><a href="#">Wide range of policies to choose from.Wide range of policies to choose from</a></li>
+                    <li><a href="#">Winter sports included with annual.</a></li>
+                    <li><a href="#">Over 50 sports covered automatically</a></li>
+                    <li><a href="#">Some of the cheapest prices around</a></li>
+                    <li><a href="#">Wide range of policies to choose from</a></li>
+                    <li><a href="#">Comprehensive levels of cover avail</a></li>
+                    <li><a href="#">Winter sports included with annual</a></li>
+                    <li><a href="#">Over 50 sports covered automatically</a></li>
+                </ul>
+            </aside><!--Fin aside-->
+        </div><!--Fin div.contenedor-->
+    </div><!--Fin div.bloque-contenido-->
+
+    <!-- ---------------------------------------------------------------
+                        --------------------------------------------------------------- -->
+    
+                    <!-- ZONA DE SUSCRIPCIÓN  -->
+
+
+        <!-- Aquí podemos usar un section porque se sale de la temática -->
+
+    <section class="suscripcion">
+        <div class="contenedor">
+            <h2>Manténgase Actualizado:</h2>
+            <form action="#">
+                <!-- Usamos sólo input sin label porque así lo requiere el modelo de photoshop -->
+                <input type="text" name="nombre" placeholder="Ingresa tu nombre" required>
+                <input type="email" name="email" placeholder="Ingresa tu email" required>
+                <input type="submit" value="Regístrate">
+            </form><!--Fin del formulario-->
+        </div><!--Fin del div.contenedor-->
+    </section><!--Fin del section-->
+
+    <!-- ---------------------------------------------------------------
+                            --------------------------------------------------------------- -->
+    
+                            <!-- PIE DE PÁGINA -->
+
+    <footer class="pie-pagina" role="contentinfo">
+        <div class="contenedor">
+            <small>Copyright © 2014 Nombre Empresa</small><!--Detalles de la Empresa-->
+            <nav>
+                <ul>
+                    <li><a href="#">Políticas del Sitio</a></li>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="#">Contáctanos</a></li>
+                </ul>
+            </nav><!--Fin de nav.-->
+        </div><!--Fin del div .contenedor-->
+    </footer><!--Fin del footer.pie-pagina-->
+
+                        <!-- REDES SOCIALES -->
+    <div class="redes-sociales">
+        <!-- Lo elementos serán flotantes, por ello, no se asignan dentro de un div.contenedor -->
+        <a href="#" title="Vamos a Facebook"><img src="img/ico-face.jpg" alt="Facebook"></a>
+        <a href="#" title="Vamos a Youtube"><img src="img/ico-youtube.jpg" alt="Youtube"></a>
+        <a href="#" title="Vamos a Twiter"><img src="img/ico-twitter.jpg" alt="Twiter"></a>
+    </div><!--Fin de div.redes-sociales-->
+</body><!--Fin del body-->
+
+
+        <!-- ---------------------------------------------------------------
+                        Compatibilidad con navegadores obsoletos
+            ---------------------------------------------------------------- -->
+
+<!-- Compatibilidad con navegadores obsoletos
+https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills -->
+
+<!-- Implementar polyfills 
+
+ Cierta características de html5 funciones en navegadores
+ viejos u obsoletos 
+
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ ***html5shiv (Entender nuevas etiquetas semánticas html5)
+
+   1)Descargamos el archivo.zip
+   2)Descoprimir archivo.zip
+   3)Buscar la carpeta src
+   4)Entrar y localizar el archivo html5shiv.js
+   5) Copiar y Pegar el archivo html5shiv.js en la carpeta js de nuestro proyecto
+   6) Dentro de nuestro index.html, hacer referencia al archivo html5shiv.js
+
+  ---- Comentarios Condicionales----
+    
+   Sí la versión del navegador es anterior a Internet Explorer 9. Cargar el siguiente archivo
+
+   [if lt IE 9]>
+
+   Ejemplo:
+
+	<script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+    
+    <![endif]
+
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    ***placeholder
+
+    https://github.com/UmbraEngineering/Placeholder
+
+   1)Descargamos el archivo.zip
+   2)Descoprimir archivo.zip
+   3)Buscar la carpeta src
+   4)Entrar y localizar el archivo simple.js
+   5) Copiar y Pegar el archivo simple.js en la carpeta js de nuestro proyecto
+   6) Dentro de nuestro index.html, hacer referencia al archivo simple.js. Ponerlo fuera del body
+
+
+            ---------------------------------------------------------------
+                        ***Reconocer los gradientes, box-shadow y border-radius
+            ----------------------------------------------------------------
+
+  
+    http://css3pie.com/
+
+   1) Descargar archivo  Download PIE 2.0 beta 1 
+   2) Descomprimir y renombrar la carpeta como: compatibilidad-estilos
+   3) Copiar la cartepa compatibilidad-estilos dentro de nuestro proyecto, en la carpeta css
+
+   Sí la versión del navegador es anterior o igual a Internet Explorer 9.
+   
+
+    4) Crear las siguientes reglas y buscar el archivo .php
+
+    .encabezado,
+    .presentacion,
+    a.aprender-mas,
+    .complementario,
+    .social img{
+
+        
+
+        behavior:url("css/compatibilidad-estilos/PIE.php");
+
+    }
+
+    5) Dentro del archivo estilos.css, buscar ls reglas donde se encuentre los gradiente, box-shadow y border-radius y agregar lo siguiente:
+
+    -pie-background: linear-gradie (to top,#319b41,#42FF7B);
+
+    cambiar los colores, por los colores originales del gradiente declarado en la regla css del archivo estilos.css
+    
+-->
+
+
+
+<!-- Sí la versión del navegador es anterior o igual a Internet Explorer 9. Cargar el siguiente archivo 
+
+[if lte IE 9]>
+
+   Ejemplo:
+
+	<script src="ruta/simple.js"></script>
+    
+    <![endif]
+
+-->
+
+
+
+<script src="js/simple.js"></script>
+
+</html>
